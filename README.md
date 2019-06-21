@@ -2,9 +2,13 @@
  how to use the loading_view plugin.
 
 Example usage
+
+
 @override
+
   Widget build(BuildContext context) {
-    return Scaffold(
+		
+		return Scaffold(
       body: LoadingView(
           isLoading: isLoading,
           progressIndicator: IndicatorMap[Indicator.defaultIndicator],
@@ -16,11 +20,13 @@ Example usage
                                    setState(() {
                                      isLoading = true;
                                    });
-                                   closeIndicator();
+                                   
                                  },
                                )),
     );
   }
+		
+		
 
 ## Getting Started
 
