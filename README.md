@@ -1,7 +1,7 @@
 
 # loading_view_example
 
-A simple widget wrapper to enable Loading View
+A sample flutter plugin for wrap the widgrt with indicator.
 
 ## Demo
 
