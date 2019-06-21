@@ -1,14 +1,28 @@
-# loading_view
+# loading_view_example
+ how to use the loading_view plugin.
 
-Progress hud 
+Example usage
+@override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: LoadingView(
+          isLoading: isLoading,
+          progressIndicator: IndicatorMap[Indicator.defaultIndicator],
+          child: OutlineButton(
+                                 child: const Text('Default', semanticsLabel: 'Default'),
+                                 onPressed: () {
+                                   indicatorWidget = IndicatorMap[Indicator.defaultIndicator];
+                                   // Perform some action
+                                   setState(() {
+                                     isLoading = true;
+                                   });
+                                   closeIndicator();
+                                 },
+                               )),
+    );
+  }
 
 ## Getting Started
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+This project is a sample for simple loading indicator.
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.

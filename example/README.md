@@ -1,6 +1,5 @@
 # loading_view_example
-
-Demonstrates how to use the loading_view plugin.
+ how to use the loading_view plugin.
 
 Example usage
 @override

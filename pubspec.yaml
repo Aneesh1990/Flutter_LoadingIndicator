@@ -1,8 +1,8 @@
-name: loading_view
+name: simple_loading_view
 description: Progress hud 
 version: 0.0.1
-author: Aneesh Ggit
-homepage:
+author: Aneesh G <Aneesh2405@gmail.com>
+homepage: https://github.com/Aneesh1990/Flutter_LoadingIndicator
 
 environment:
   sdk: ">=2.1.0 <3.0.0"

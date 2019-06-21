@@ -1,7 +1,6 @@
 name: loading_view_example
 description: Demonstrates how to use the loading_view plugin.
 publish_to: 'none'
-author:'Aneesh G'
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
@@ -18,7 +17,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  loading_view:
+  simple_loading_view:
     path: ../
 
 # For information on the generic Dart part of this file, see the

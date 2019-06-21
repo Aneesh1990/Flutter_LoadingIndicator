@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:loading_view/loading_view.dart';
+import 'package:simple_loading_view/simple_loading_view.dart';
 
 void main() => runApp(MyApp());
 

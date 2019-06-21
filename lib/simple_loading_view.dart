@@ -1,20 +1,5 @@
 import 'package:flutter/material.dart';
 
-/// Our custom fork of https://pub.dev/packages/modal_progress_hud adding a fading effect
-///
-/// wrapper around any widget that makes an async call to show a modal progress
-/// indicator while the async call is in progress.
-///
-/// The progress indicator can be turned on or off using [isLoading]
-///
-/// The progress indicator defaults to a [CircularProgressIndicator] but can be
-/// any kind of widget
-///
-/// The color of the modal barrier can be set using [color]
-///
-/// The opacity of the modal barrier can be set using [opacity]
-///
-/// HUD=Heads Up Display
 ///
 class LoadingView extends StatefulWidget {
   final bool isLoading;
