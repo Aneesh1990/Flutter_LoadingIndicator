@@ -1,58 +1,80 @@
-name: simple_loading_view
-description: This project is a sample for simple loading indicator. We can implement indicator simply, also use our custom widgets as indicator. Please check the Example for more details.
-version: 0.1.1
-author: Aneesh G <Aneesh2405@gmail.com>
-homepage: https://github.com/Aneesh1990/Flutter_LoadingIndicator
 
-environment:
-  sdk: ">=2.1.0 <3.0.0"
+# loading_view_example
 
+A simple widget wrapper to enable modal progress HUD (a modal progress indicator, HUD = Heads Up Display)
+
+## Demo
+
+![Demo](https://lh3.googleusercontent.com/-UlFFunjsAKA/XQyhBtwEKNI/AAAAAAAAQkw/Qv84ROg8qAc2iNgoAtuqJdTomvZKWFyPACK8BGAs/s0/2019-06-21.jpg)
+
+*See example for details*
+
+
+## Usage
+
+Add the package to your `pubspec.yml` file.
+
+```yml
 dependencies:
-  flutter:
-    sdk: flutter
+  simple_loading_view: ^0.0.1
+```
 
-dev_dependencies:
-  flutter_test:
-    sdk: flutter
+Next, import the library into your widget.
 
-# For information on the generic Dart part of this file, see the
-# following page: https://www.dartlang.org/tools/pub/pubspec
+```dart
+import 'package:simple_loading_view/simple_loading_view.dart';
+```
 
-# The following section is specific to Flutter.
-flutter:
-  # This section identifies this Flutter project as a plugin project.
-  # The androidPackage and pluginClass identifiers should not ordinarily
-  # be modified. They are used by the tooling to maintain consistency when
-  # adding or updating assets for this project.
-  plugin:
-    androidPackage: com.ileaf.loading_view
-    pluginClass: LoadingViewPlugin
+How to implement LoadingView ? 
 
-  # To add assets to your plugin package, add an assets section, like this:
+```dart
+...
+bool _isLoading = false
+...
+
+@override
+Widget build(BuildContext context) {
+  return Scaffold(
+     body: LoadingView(
+              isLoading: isLoading,
+              // you can use your own widget here, more example please refer example project.
+              progressIndicator: IndicatorMap[Indicator.defaultIndicator],
+              // Current page UI implement here as child, Here i'm implemented a button for showing the indicator.
+              child: OutlineButton(
+                       child: const Text('Default', semanticsLabel: 'Default'),
+                       onPressed: () {
+                         indicatorWidget = IndicatorMap[Indicator.defaultIndicator];
+                           setState(() {
+                             isLoading = true;
+                           });
+                           // For testing Purpose i used a function for Hiding the Indicator.
+                           closeIndicator();
+                           },
+                           )),
+  );
+}
+```
 
 
-  # For details regarding assets in packages, see
-  # https://flutter.dev/assets-and-images/#from-packages
-  #
-  # An image asset can refer to one or more resolution-specific "variants", see
-  # https://flutter.dev/assets-and-images/#resolution-aware.
+## Options in the Indicator view 
 
-  # To add custom fonts to your plugin package, add a fonts section here,
-  # in this "flutter" section. Each entry in this list should have a
-  # "family" key with the font family name, and a "fonts" key with a
-  # list giving the asset and other descriptors for the font. For
-  # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
-  #
-  # For details regarding fonts in packages, see
-  # https://flutter.dev/custom-fonts/#from-packages
+The parameters are customizable
+```dart
+LoadingOverlay({
+    @required this.isLoading,
+    @required this.child,
+    this.opacity = 0.7,
+    this.progressIndicator = IndicatorMap[Indicator.defaultIndicator],
+});
+```
+
+
+
+
+### Issues and feedback
+
+Please file [issues](https://github.com/Aneesh1990/Flutter_LoadingIndicator/issues/new)
+to send feedback or report a bug. Thank you!
+
+
+
