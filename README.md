@@ -1,7 +1,7 @@
 
 # loading_view_example
 
-A simple widget wrapper to enable modal progress HUD (a modal progress indicator, HUD = Heads Up Display)
+A simple widget wrapper to enable Loading View
 
 ## Demo
 
